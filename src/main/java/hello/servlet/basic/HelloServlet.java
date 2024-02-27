@@ -22,12 +22,14 @@ public class HelloServlet extends HttpServlet {
         System.out.println("response = " + response);
 
         // 서블릿은 쿼리파라미터 편하게 읽을 수 있는데 그게
-        String usernamer = request.getParameter("username");
-        System.out.println("parameter = " + usernamer);
+        String username = request.getParameter("username"); // 쿼리파라미터 읽기
+        System.out.println("parameter = " + username);
 
+        // 응답 메세지 보내보기
+        // 여기에 값을 넣으면 웹브라우저에 응답하는  응답 http response 메세지에 데이터를 담아 보내는 거
         response.setContentType("text/plain"); // 단순문자
         response.setCharacterEncoding("utf-8"); // 문자인코딩 정보를 넘겨줘야 하는데 이건 utf-8
-        response.getWriter().write("hello" + usernamer);
+        response.getWriter().write("hello" + username);
 
     }
 }
