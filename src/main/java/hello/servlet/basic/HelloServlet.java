@@ -27,9 +27,9 @@ public class HelloServlet extends HttpServlet {
 
         // 응답 메세지 보내보기
         // 여기에 값을 넣으면 웹브라우저에 응답하는  응답 http response 메세지에 데이터를 담아 보내는 거
-        response.setContentType("text/plain"); // 단순문자
+        response.setContentType("text/plain"); // 단순문자 // 컨텐트 타입 헤더
         response.setCharacterEncoding("utf-8"); // 문자인코딩 정보를 넘겨줘야 하는데 이건 utf-8
-        response.getWriter().write("hello" + username);
+        response.getWriter().write("hello" + username); // getWriter를 쓰면 바디에 입력함
 
     }
 }
