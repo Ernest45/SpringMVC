@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.IOException;
 import java.util.Enumeration;
@@ -39,6 +40,16 @@ public class RequestParamServlet extends HttpServlet {
         System.out.println();
         System.out.println("username = " + username);
         System.out.println("age = " + age);
+        System.out.println();
+
+
+        System.out.println("[이름이 같은 복수 파라미터 조회]");
+        String[] usernames = req.getParameterValues("username");
+        for (String name : usernames) {
+            System.out.println("name = " + name);
+        }
+
+        resp.getWriter().write("ok");
 
 
 
